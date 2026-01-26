@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run TS (tsx)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx", "${file}"], //=> pra rodar em qualquer arquivo troque para : ["tsx", "${file}"]
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }   
+  ]
+}
