@@ -1,7 +1,5 @@
 import Id from "../shared/Id"
 
-
-
 export interface EntidadeProps {
     id?: string
 }
