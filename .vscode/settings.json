@@ -9,6 +9,49 @@
         "external": "tools",
         "ui": "animation",
         "usuario": "admin",
-        "service": "ci"
+        "service": "ci",
+        "standards": "public",
     },
 }
+
+// LISTA DE NOMES DE PASTAS
+// "src": "src",
+// "source": "src",
+// "app": "app",
+// "apps": "app",
+// "lib": "lib",
+// "libs": "lib",
+// "core": "core",
+// "shared": "shared",
+// "common": "common",
+// "utils": "utils",
+// "helpers": "helpers"
+
+// "components": "components",
+// "pages": "pages",
+// "views": "views",
+// "layouts": "layout",
+// "hooks": "hook",
+// "styles": "style",
+// "assets": "asset",
+// "public": "public",
+// "static": "static"
+
+// "config": "config",
+// "configs": "config",
+// "settings": "config",
+// "scripts": "script",
+// "server": "server",
+// "api": "api",
+// "database": "database",
+// "db": "database"
+
+// "docs": "docs",
+// "documentation": "docs",
+// "guides": "docs",
+// "notes": "notes"
+
+// "docker": "docker",
+// "kubernetes": "kubernetes",
+// "ci": "ci",
+// ".github": "github"
