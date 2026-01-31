@@ -1,31 +1,31 @@
 import NomeSimples from './NomeSimples'
 
 export default class NomePessoa extends NomeSimples {
-    constructor(valor: string, atributo: string = 'nome', min: number = 3, max: number = 60) {
-        super(valor, atributo, min, max)
-        if (valor.split(' ').length < 2) {
+    constructor(completo: string, atributo: string = 'nome', min: number = 3, max: number = 60) {
+        super(completo, atributo, min, max)
+        if (completo.split(' ').length < 2) {
             throw new Error(`O ${atributo} deve conter pelo menos dois nomes.`)
         }
     }
     get primeiroNome() {
-        return this.valor.split(' ')[0]
+        return this.completo.split(' ')[0]
     }
 
     get ultimoNome() {
         {
-            return this.valor.split(' ').slice(-1)
+            return this.completo.split(' ').slice(-1)
         }
     }
 
     get nomesDoMeio() {
-        const partes = this.valor.split(' ')
+        const partes = this.completo.split(' ')
         return partes.slice(1, -1)
     }
 
     get abreviacao() {
-        const partes = this.valor.split(' ')
+        const partes = this.completo.split(' ')
         if (partes.length <= 2) {
-            return this.valor
+            return this.completo
         }
         const primeiro = partes[0]
         const ultimo = partes.slice(-1)
@@ -37,7 +37,7 @@ export default class NomePessoa extends NomeSimples {
     }
 
     get slug() {
-        const nomes = this.valor
+        const nomes = this.completo
             .normalize('NFD')
             .replace(/[\u0300-\u036f]/g, '') // Remove acentuação
             .replace(/[^a-zA-Z\s]/g, '') // Remove caracteres especiais
