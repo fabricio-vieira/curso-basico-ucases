@@ -1,14 +1,16 @@
-import { hashSync, compare, genSalt, genSaltSync } from 'bcrypt'
-import ProvedorCriptografia from '../../core/usuario/provider/ProvedorCriptografia'
+import bcrypt from 'bcrypt'
+import iProvedorCriptografia from '../../core/usuario/provider/iProvedorCriptografia'
 
-export default class CriptografiaPadrao implements ProvedorCriptografia {
+export default class CriptografiaPadrao implements iProvedorCriptografia {
     criptografar(senha: string): string {
-        const salt = genSaltSync(11)
-        return hashSync(senha, salt)
+        const salt = bcrypt.genSaltSync(11)
+        console.log('senha antes da criptografia', senha)
+        return bcrypt.hashSync(senha, salt)
     }
 
     comparar(senha: string, hash: string): boolean {
-        const senhaCriptografada = this.criptografar(senha)
-        return senhaCriptografada === hash
+        console.log('senha para comparar', senha)
+        console.log('hash para comparar', hash)
+        return bcrypt.compareSync(senha, hash)
     }
 }

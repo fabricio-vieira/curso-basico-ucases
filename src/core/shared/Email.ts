@@ -10,5 +10,7 @@ export default class Email {
         if (!valor.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i)) {
             throw new Error(`O ${atributo} informado é inválido.`)
         }
+
+        console.log('Validou email')
     }
 }

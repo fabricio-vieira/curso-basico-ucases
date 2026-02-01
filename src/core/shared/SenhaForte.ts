@@ -26,5 +26,6 @@ export default class SenhaForte {
         if (!valor.match(/[^A-Za-z0-9]/)) {
             throw new Error(`A ${atributo} deve conter ao menos um caractere especial.`)
         }
+        console.log(`Validou a senha ${valor} como forte`)
     }
 }

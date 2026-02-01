@@ -1,12 +1,11 @@
 import Terminal from '../util/Terminal'
-import RegistrarUsuario from '../../../core/usuario/service/RegistrarUsuario'
+import LoginUsuario from '../../../core/usuario/service/LoginUsuario'
 import CriptografiaPadrao from '../../auth/CriptografiaPadrao'
 import RepositorioUsuarioMemoria from '../../db/RepositorioUsuarioMemoria'
 
-export default async function registrarUsuario() {
-    Terminal.titulo('Registrar Usuário')
+export default async function loginUsuario() {
+    Terminal.titulo('Login Usuário')
 
-    const nome = await Terminal.campoRequerido('Nome', { default: 'Fabricio Vieira' })
     const email = await Terminal.campoRequerido('Email', { default: 'fabricio@email.com' })
     const senha = await Terminal.campoRequerido('Senha', {
         default: '102030@As',
@@ -17,9 +16,10 @@ export default async function registrarUsuario() {
     try {
         const criptografia = new CriptografiaPadrao()
         const repoUsuarioMem = RepositorioUsuarioMemoria.instance // Muda o jeito de instanciar o repo (comum: new Reposit())
-        const casoDeUso = new RegistrarUsuario(repoUsuarioMem, criptografia)
-        await casoDeUso.executar({ nome, email, senha })
-        Terminal.sucesso(`Usuário registrado com sucesso`)
+        const casoDeUso = new LoginUsuario(repoUsuarioMem, criptografia)
+        const usuario = await casoDeUso.executar({ email, senha })
+        console.log('usuario logado', usuario.props)
+        Terminal.sucesso(`Usuário ${usuario.nome.completo} Logado com sucesso`)
     } catch (error: any) {
         Terminal.erro(error.message)
     } finally {

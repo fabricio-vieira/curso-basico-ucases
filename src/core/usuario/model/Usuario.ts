@@ -19,5 +19,7 @@ export default class Usuario extends Entidade<Usuario, UsuarioProps> {
         this.nome = new NomePessoa(props.nome!)
         this.email = new Email(props.email!)
         this.senha = props.senha ? new SenhaHash(props.senha) : null
+
+        console.log('Instanciou o usuário')
     }
 }

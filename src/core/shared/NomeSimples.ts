@@ -16,5 +16,6 @@ export default class NomeSimples {
         if (completo.trim().length < min || completo.trim().length > max) {
             throw new Error(`O ${atributo} deve ter entre ${min} e ${max} caracteres.`)
         }
+        console.log('Passou pelas validações de nome simples')
     }
 }

@@ -1,4 +1,4 @@
-export default interface ProvedorCriptografia {
+export default interface iProvedorCriptografia {
     criptografar(senha: string): string
     comparar(senha: string, hash: string): boolean
 }

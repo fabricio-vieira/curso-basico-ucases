@@ -6,6 +6,8 @@ export default class NomePessoa extends NomeSimples {
         if (completo.split(' ').length < 2) {
             throw new Error(`O ${atributo} deve conter pelo menos dois nomes.`)
         }
+
+        console.log('Passou pelas validações de nome pessoa')
     }
     get primeiroNome() {
         return this.completo.split(' ')[0]

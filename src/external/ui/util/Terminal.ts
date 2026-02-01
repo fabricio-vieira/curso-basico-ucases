@@ -33,4 +33,8 @@ export default class Terminal {
     static erro(texto: string, novaLinha = true) {
         terminal.red(`${novaLinha ? '\n' : ''}${texto}`)
     }
+
+    static mostrarLogs() {
+        terminal.yellow('\n\n=====>***LOGS***<=====\n-------------------------\n')
+    }
 }
