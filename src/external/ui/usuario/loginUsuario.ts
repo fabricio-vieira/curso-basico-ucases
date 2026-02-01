@@ -2,6 +2,7 @@ import Terminal from '../util/Terminal'
 import LoginUsuario from '../../../core/usuario/service/LoginUsuario'
 import CriptografiaPadrao from '../../auth/CriptografiaPadrao'
 import RepositorioUsuarioMemoria from '../../db/RepositorioUsuarioMemoria'
+import Sessao from '../util/Sessao'
 
 export default async function loginUsuario() {
     Terminal.titulo('Login Usuário')
@@ -18,6 +19,7 @@ export default async function loginUsuario() {
         const repoUsuarioMem = RepositorioUsuarioMemoria.instance // Muda o jeito de instanciar o repo (comum: new Reposit())
         const casoDeUso = new LoginUsuario(repoUsuarioMem, criptografia)
         const usuario = await casoDeUso.executar({ email, senha })
+        Sessao.iniciar(usuario)
         console.log('usuario logado', usuario.props)
         Terminal.sucesso(`Usuário ${usuario.nome.completo} Logado com sucesso`)
     } catch (error: any) {
