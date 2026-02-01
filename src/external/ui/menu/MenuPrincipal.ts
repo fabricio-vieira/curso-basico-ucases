@@ -2,6 +2,7 @@ import Terminal from '../util/Terminal'
 import registrarUsuario from '../usuario/registrarUsuario'
 import loginUsuario from '../usuario/loginUsuario'
 import Sessao from '../util/Sessao'
+import listarUsuarios from '../usuario/listarUsuarios'
 
 export default class MenuPrincipal {
     async renderizar() {
@@ -19,6 +20,9 @@ export default class MenuPrincipal {
                 break
             case 'Fazer Login':
                 await loginUsuario()
+                break
+            case 'Listar Usuários':
+                await listarUsuarios()
                 break
             case 'Fazer Logout':
                 Sessao.finalizar()

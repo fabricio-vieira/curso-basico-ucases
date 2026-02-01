@@ -22,4 +22,8 @@ export default class Usuario extends Entidade<Usuario, UsuarioProps> {
 
         console.log('Instanciou o usuário')
     }
+
+    semSenha(): Usuario {
+        return this.clone({ senha: undefined })
+    }
 }

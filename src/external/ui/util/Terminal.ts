@@ -37,4 +37,9 @@ export default class Terminal {
     static mostrarLogs() {
         terminal.yellow('\n\n=====>***LOGS***<=====\n-------------------------\n')
     }
+
+    static async tabel(dados: any[]) {
+        terminal('\n')
+        terminal.table([Object.keys(dados[0]), ...dados.map((d) => Object.values(d) as any)])
+    }
 }
