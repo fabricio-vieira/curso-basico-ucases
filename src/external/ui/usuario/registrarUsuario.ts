@@ -19,6 +19,7 @@ export default async function registrarUsuario() {
         const repoUsuarioMem = RepositorioUsuarioMemoria.instance // Muda o jeito de instanciar o repo (comum: new Reposit())
         const casoDeUso = new RegistrarUsuario(repoUsuarioMem, criptografia)
         await casoDeUso.executar({ nome, email, senha })
+
         Terminal.sucesso(`Usuário registrado com sucesso`)
     } catch (error: any) {
         Terminal.erro(error.message)

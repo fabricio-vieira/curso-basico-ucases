@@ -4,7 +4,7 @@ import { InputFieldOptions } from 'terminal-kit/Terminal'
 export default class Terminal {
     static titulo(texto: string) {
         terminal.clear()
-        terminal.bold.magenta(`\n${texto}\n \n`)
+        terminal.bold.magenta(`\n${texto}\n`)
         terminal.bold.magenta('-'.repeat(texto.length))
     }
 
