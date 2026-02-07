@@ -6,7 +6,7 @@ import RepositorioUsuarioMemoria from '../../db/RepositorioUsuarioMemoria'
 export default async function registrarUsuario() {
     Terminal.titulo('Registrar Usuário')
 
-    const nome = await Terminal.campoRequerido('Nome', { default: 'Fabricio Vieira' })
+    const nome = await Terminal.campoRequerido('Nome', { default: 'Fabricio Valério Rali Vieira' })
     const email = await Terminal.campoRequerido('Email', { default: 'fabricio@email.com' })
     const senha = await Terminal.campoRequerido('Senha', {
         default: '102030@As',

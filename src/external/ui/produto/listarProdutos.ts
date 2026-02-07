@@ -14,7 +14,7 @@ export default async function listarProdutos() {
             usuarios.map((prod) => ({
                 id: prod.id.valor,
                 nome: prod.nome.completo,
-                preco: prod.preco.formatado(),
+                preco: prod.preco.valor,
             }))
         )
     } catch (error: any) {

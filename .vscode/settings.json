@@ -10,6 +10,7 @@
         "ui": "animation",
         "usuario": "admin",
         "produto": "admin",
+        "infra": "admin",
         "service": "ci",
         "standards": "public",
         "adapter": "pipe"

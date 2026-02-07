@@ -11,6 +11,7 @@ export default async function loginUsuario() {
     const senha = await Terminal.campoRequerido('Senha', {
         default: '102030@As',
         echo: true,
+        cancelable: true,
     })
     Terminal.mostrarLogs()
 
