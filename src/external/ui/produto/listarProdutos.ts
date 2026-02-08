@@ -1,22 +1,17 @@
 import Terminal from '../util/Terminal'
 import RepositorioProdutoMemoria from '../../db/RepositorioProdutoMemoria'
 import ObterProdutos from '../../../core/produto/service/ObterProdutos'
+import ObterProdutosController from '../../../adapter/controller/ObterProdutosController'
 
 export default async function listarProdutos() {
-    Terminal.titulo('Listar Usuários')
+    Terminal.titulo('Listar Produtos')
 
     try {
         const repositorioProduto = RepositorioProdutoMemoria.instance // Muda o jeito de instanciar o repo (comum: new Reposit())
-        const casoDeUso = new ObterProdutos(repositorioProduto)
-        const usuarios = await casoDeUso.executar()
+        const controller = new ObterProdutosController(repositorioProduto)
+        const produtos = await controller.executar()
         Terminal.sucesso(`Abaixo relação de Produtos`)
-        Terminal.tabel(
-            usuarios.map((prod) => ({
-                id: prod.id.valor,
-                nome: prod.nome.completo,
-                preco: prod.preco.valor,
-            }))
-        )
+        Terminal.tabel(produtos)
     } catch (error: any) {
         Terminal.erro(error.message)
     } finally {
