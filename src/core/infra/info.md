@@ -27,3 +27,4 @@
 # 1 - Abraçadeiras (Tipo D, U ou Cunhas): Essenciais para fixar os eletrodutos na parede ou teto. Elas "abraçam" o tubo e são presas por parafusos.
 
 # 2 - Arruelas e Buchas: Utilizadas em conjunto com os conectores tipo box para garantir o travamento e o acabamento na parte interna das caixas de passagem.
+

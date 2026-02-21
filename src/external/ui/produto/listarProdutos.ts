@@ -1,6 +1,5 @@
 import Terminal from '../util/Terminal'
 import RepositorioProdutoMemoria from '../../db/RepositorioProdutoMemoria'
-import ObterProdutos from '../../../core/produto/service/ObterProdutos'
 import ObterProdutosController from '../../../adapter/controller/ObterProdutosController'
 
 export default async function listarProdutos() {
@@ -11,7 +10,7 @@ export default async function listarProdutos() {
         const controller = new ObterProdutosController(repositorioProduto)
         const produtos = await controller.executar()
         Terminal.sucesso(`Abaixo relação de Produtos`)
-        Terminal.tabel(produtos)
+        Terminal.tabela(produtos)
     } catch (error: any) {
         Terminal.erro(error.message)
     } finally {
